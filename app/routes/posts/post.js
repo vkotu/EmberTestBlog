@@ -4,9 +4,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model: function(){
+    model: function(params){
         console.log("posts.js of routes");
-        return this.store.find('post');
+        return this.store.find('post',params.post_id);
     },
     afterModel(){
        // debugger;
@@ -14,6 +14,8 @@ export default Ember.Route.extend({
     actions:{
         editAuthor(model){
             model.save();
+          //var postContrl = this.controllerFor('posts.post');
+          //debugger;
         }
     }
 

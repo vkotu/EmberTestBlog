@@ -17,15 +17,23 @@ export default Ember.Route.extend({
     actions:{
         addPost(){
             var contr = this.controllerFor('posts');
-            debugger;
+            //debugger;
             var post = this.store.createRecord('post',{
                 "title": contr.get('newTitle'),
                 "author":contr.get('newAuthor')
             });
             contr.set('newTitle','');
             contr.set('newAuthor','');
-            post.save();
-        }
+            post.save().then((result) => {
+              //this.transitionTo('posts');
+              debugger;
+            });
+        },
+      deletePost(post){
+        post.deleteRecord();
+        post.save();
+
+      }
     }
 
 
