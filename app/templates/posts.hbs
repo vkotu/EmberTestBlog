@@ -1,0 +1,19 @@
+<ul>
+
+        {{#each mod in model}}
+
+        <li>
+               {{#link-to 'posts.post' mod}} {{mod.title}} by {{mod.author}} {{/link-to}}
+        </li>
+
+        {{/each}}
+<p>Add new post</p>
+
+    <div><label> Title: </label>{{input value=newTitle }}</div>
+    <div><label> author: </label>{{input value=newAuthor }}</div>
+    <button {{action 'addPost'}} >Add </button>
+
+    {{outlet}}
+
+
+</ul>
