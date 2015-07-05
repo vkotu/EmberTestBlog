@@ -6,6 +6,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model: function(params){
         console.log("posts.js of routes");
+      debugger;
         return this.store.find('post',params.post_id);
     },
     afterModel(){

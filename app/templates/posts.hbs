@@ -5,7 +5,7 @@
         {{#each mod in model}}
 
         <li>
-               {{#link-to 'posts.post' mod}} {{mod.title}}  {{/link-to}} by {{mod.author}}
+               {{#link-to 'posts.post' mod}} {{mod.title}}  {{/link-to}} by {{mod.author.fname}} {{mod.author.lname}}
             <a href="#" {{action 'deletePost' mod}}>Delete!</a>
 
         </li>
@@ -18,7 +18,8 @@
 <p>Add new post</p>
 
     <div><label> Title: </label>{{input value=newTitle }}</div>
-    <div><label> author: </label>{{input value=newAuthor }}</div>
+    <div><label> author fname: </label>{{input value=fname }}</div>
+    <div><label> author lname: </label>{{input value=lname }}</div>
     <button {{action 'addPost'}} >Add </button>
 </div>
 

@@ -7,6 +7,6 @@ var attr = DS.attr;
 export default DS.Model.extend({
 
     title: attr('string'),
-    author:attr('string')
+    author: DS.belongsTo('author')
 
 });
