@@ -13,8 +13,9 @@ export default Ember.Route.extend({
        // debugger;
     },
     actions:{
-        editAuthor(model){
+        editPost(model){
             model.save();
+
           //var postContrl = this.controllerFor('posts.post');
           //debugger;
         }
