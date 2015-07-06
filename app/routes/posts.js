@@ -18,7 +18,7 @@ export default Ember.Route.extend({
     actions:{
         addPost(){
             var contr = this.controllerFor('posts');
-            debugger;
+           // debugger;
           var author = this.store.createRecord('author',{
             "fname":contr.get('fname'),
             "lname":contr.get('lname')
