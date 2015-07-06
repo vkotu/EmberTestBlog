@@ -20,7 +20,7 @@ module.exports = function(environment) {
     contentSecurityPolicyHeader: 'Content-Security-Policy-Report-Only',
     contentSecurityPolicy: {
       'connect-src': "'self' http://localhost:3000/*"
-    },
+    }
 
   };
 

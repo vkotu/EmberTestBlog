@@ -12,22 +12,32 @@ export default Ember.Route.extend({
         //debugger;
     },
     setupController(controller,model){
+     // debugger;
         controller.set('model',model);
     },
     actions:{
         addPost(){
             var contr = this.controllerFor('posts');
-            //debugger;
+           // debugger;
+          var author = this.store.createRecord('author',{
+            "fname":contr.get('fname'),
+            "lname":contr.get('lname')
+          });
+          author.save().then((author) => {
+            debugger;
+            var aid = author.get("id");
             var post = this.store.createRecord('post',{
-                "title": contr.get('newTitle'),
-                "author":contr.get('newAuthor')
+              "title": contr.get('newTitle'),
+              "author": author
             });
-            contr.set('newTitle','');
-            contr.set('newAuthor','');
             post.save().then((result) => {
               //this.transitionTo('posts');
               debugger;
+              contr.set('newTitle','');
+              contr.set('fname','');
+              contr.set('lname','');
             });
+          });
         },
       deletePost(post){
         post.deleteRecord();
