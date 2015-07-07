@@ -14,6 +14,9 @@ Router.map(function() {
     this.route("author",{path:':author_id'});
   });
 
+  this.resource("testposts");
+
+
 });
 
 export default Router;
