@@ -6,7 +6,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model: function(params){
         console.log("posts.js of routes");
-      debugger;
+
         return this.store.find('post',params.post_id);
     },
     afterModel(){
@@ -17,7 +17,10 @@ export default Ember.Route.extend({
             model.save();
           //var postContrl = this.controllerFor('posts.post');
           //debugger;
-        }
+        },
+      editPost(model){
+        model.save();
+      }
     }
 
 });
